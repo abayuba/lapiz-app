@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.imabuilder.aplicacionesmovilesuy.lapizapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="uy.aplicacionesmoviles.lapizapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="https://phonegap.com/ns/1.0">
 	<name>Lapiz App</name>
 	<description>L&aacute;piz App</description>
 	<author email="abayuba1@gmail.com" href="http://aplicacionesmoviles.uy">abayuba </author>
