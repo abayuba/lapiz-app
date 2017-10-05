@@ -1,0 +1,14 @@
+	<ion-view view-title="{{ categorie.name }}" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top"  scroll="true"   id="page-categorie_singles" class="page-categorie_singles">
+					<ion-refresher pulling-text="Pull to refresh..."  on-refresh="doRefresh()"></ion-refresher>
+			<div class="list ">
+					<div class="item item-divider"  ng-bind-html="categorie.name | to_trusted">{{categorie.name}}</div>
+					<div class="item"><span class="subdued" >{{categorie.count}} items</span></div>
+					<div class="item noborder"><img class="full-image" ng-src="{{categorie.image.src}}"  zoom-view="true" zoom-src="{{categorie.image.src}}"/></div>
+			</div>
+			<br/><br/><br/>
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

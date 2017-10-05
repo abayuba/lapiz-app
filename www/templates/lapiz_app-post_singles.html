@@ -1,0 +1,38 @@
+	<ion-view view-title="{{ post.title.rendered }}" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top"  scroll="true"   id="page-post_singles" class="page-post_singles">
+		
+			<ion-refresher pulling-text="Pull to refresh..."  on-refresh="doRefresh()"></ion-refresher>
+			<div class="list ">
+					<div class="item item-divider"  ng-bind-html="post.title.rendered | to_trusted">{{post.title.rendered}}</div>
+					<div class="item noborder"><img class="full-image" ng-src="{{post.x_featured_media_original}}"  zoom-view="true" zoom-src="{{post.x_featured_media_original}}"/></div>
+					<div class="item item-text-wrap noborder to_trusted" ng-bind-html="post.content.rendered | strHTML"></div>
+					<div class="item"><span class="subdued" ><span class="icon ion-ios-pricetags"> Tags<br/>{{post.x_tags}}</span></div>
+					<div class="item"><span class="subdued" ><span class="icon ion-bookmark"> Categories<br/>{{post.x_categories}}</span></div>
+					<!--
+					<div class="item">
+					<p>´Compartir</p>
+					<div class="button-bar">
+						<button class="button button-small button-assertive icon ion-social-googleplus" ng-click="openURL('https://plus.google.com/share?url=' + post.link)"></button>
+						<button class="button button-small button-positive icon ion-social-facebook" ng-click="openURL('https://facebook.com/sharer/sharer.php?u=' + post.link)"></button>
+						<button class="button button-small button-calm icon ion-social-twitter" ng-click="openURL('https://twitter.com/share?url=' + post.link)"></button>
+						<button class="button button-small button-assertive-900 icon ion-social-pinterest" ng-click="openURL('https://pinterest.com/pin/create/bookmarklet/?&url=' + post.link)"></button>
+						<button class="button button-small button-positive-900 icon ion-social-linkedin" ng-click="openURL('https://www.linkedin.com/shareArticle?url=' + post.link)"></button>
+					</div>
+					</div>
+					-->
+					<div class="item">
+						<button run-social-sharing message="{{ post.link }}" class="button button-small ion-android-share-alt button-outline button-positive icon-left">´Compartir</button>
+					</div>
+			</div>
+			<div class="list">
+				<div class="item tabs tabs-secondary tabs-icon-left tabs-stable">
+					<a class="tab-item" ng-click="addToDbVirtual(post);"><i class="icon ion-android-add-circle"></i> Add Bookmark</a>
+					<a class="tab-item" ng-href="#/lapiz_app/post_bookmark"><i class="icon ion-ios-star"></i> Bookmark</a>
+				</div>
+			</div>
+			<br/><br/><br/>
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

@@ -1,0 +1,42 @@
+	<ion-view view-title="Categor&iacute;as" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top"  scroll="true"   id="page-categoras" class=" page-categoras">
+					<!-- code refresh -->
+			<ion-refresher pulling-text="Pull to refresh..."  on-refresh="doRefresh()"></ion-refresher>
+			<!-- ./code refresh -->
+			
+
+				<!-- code listing -->
+			<div class="card list light-bg animate-none">
+				<a class="item item-icon-left ink-colorful item-icon-right "  ng-repeat="item in categorie123s | filter:filter_categorie123s as results" ng-init="$last ? fireEvent() : null" ng-href="#/lapiz_app/categorie123_singles/{{item.id}}" >
+					<i class="icon colorful ion-social-buffer"></i>
+					<span ng-bind-html="item.name | to_trusted"></span>
+						<span class="item-note" >
+						{{item.count}} pages
+						</span>
+					<div class="item-note" ng-bind-html="item.description | to_trusted"></div>
+					<i class="icon ion-arrow-right-c"></i>
+				</a>
+			</div>
+			<!-- ./code listing -->
+
+
+			<!-- code infinite scroll -->
+			<ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="onInfinite()" distance="5px" ng-if="hasMoreData"></ion-infinite-scroll>
+			<!-- ./code infinite scroll -->
+
+
+			<!-- code search result not found -->
+			<ion-list ng-if="results.length == 0" class="list card">
+				<div class="item"  >
+					<p>No results found...!</p>
+				</div>
+			</ion-list>
+			<!-- ./code search result not found -->
+
+
+
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>
