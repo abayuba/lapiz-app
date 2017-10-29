@@ -1671,7 +1671,7 @@ $ionicConfig.backButton.text("");
 	};
 	var targetQuery = ""; //default param
 	var raplaceWithQuery = "";
-	//fix url Dashboard
+	//fix url Home
 	targetQuery = "categories=-1"; //default param
 	raplaceWithQuery = "categories=-1";
 		
